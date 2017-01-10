@@ -1,0 +1,22 @@
+<% provide(:page_header,@location_id+" weather on "+@date)%>
+<%unless @l.nil?%>
+<div class='col-lg-12'>
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			Nearest Meteorology Station: <%= @nearest_station.name%>
+			<br/>
+			Distance: <%= @distances.round(2)%> miles from station to the location
+			<br/>
+			Current Condition: <%= @current_weather['summary']%>
+			<br/>
+			Current Temperature: <%= @current_weather['temperature']%>
+		</div>
+		<div class='panel-body'>
+			<%= render :partial=>'weather_data_table', :locals => {:attributes => @attributes, :wrecs=>@wrecs}%>
+		</div>
+	</div>
+</div>
+<%else%>
+Don't have that location
+<%end%>
+

@@ -1,0 +1,11 @@
+I"ƒ(function() {
+  var main;
+
+  main = function() {
+    $('.datatable').DataTable();
+  };
+
+  $(document).ready(main);
+
+}).call(this);
+:ET
